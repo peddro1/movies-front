@@ -1,0 +1,15 @@
+.grad{
+    padding: 50px;
+    color: white;
+    height: 100vh;
+    background-image: linear-gradient(to right,black, black, transparent,transparent );
+}
+
+.img{
+    background-image: url("./../assets/images/pluto.jpg");
+    height: 100%;
+}
+
+body{
+    margin: 0px;
+}
