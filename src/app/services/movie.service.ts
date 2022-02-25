@@ -31,4 +31,8 @@ export class MovieService {
     });
   }
 
+  findListGenres(){
+    return this.http.get<any>(this.apiMovie + "/genre/movie/list" + this.apiKey);
+  }
+
 }
