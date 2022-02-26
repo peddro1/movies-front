@@ -18,7 +18,9 @@ export class GenresComponent implements OnInit {
 
   public genres: Array<Genre> | undefined
 
-  public listMovies: Array<MovieFromApi> = []
+  public listMovies: Array<MovieFromApi> = [];
+
+  public genrerNameChoose: String | undefined;
 
   constructor(
     private movieService: MovieService
@@ -27,15 +29,14 @@ export class GenresComponent implements OnInit {
   ngOnInit(): void {
     this.movieService.findListGenres().subscribe(genres => {
       this.genres = genres.genres;
-      //console.log(this.genres)
     });
   }
 
-  getMoviesByGenre(id: number | undefined){
-    this.movieService.findListMoviesByGenre(id != undefined ? id: 0).subscribe( movies =>{
+  getMoviesByGenre(genre: Genre){
+    this.genrerNameChoose = genre.name;
+    this.movieService.findListMoviesByGenre(genre?.id != undefined ? genre?.id: 0).subscribe( movies =>{
       this.listMovies = movies.results;
     })
-    console.log(this.listMovies)
   }
 
   returnSrc(path: string| undefined): string | undefined{

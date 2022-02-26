@@ -1,39 +1,42 @@
 
-<div class="div_genres">
-    <div class="center">
-        <h1 class="title-genres"> Gêneros</h1>
+<div>
+    <div class="div_genres">
+        <div class="center">
+            <h1 class="title-genres"> Gêneros</h1>
+        </div>
+        
+        <div class="btns-div">
+            <button class="dds__btn btn_genres dds__text-white" *ngFor="let genre of genres" (click)="getMoviesByGenre(genre)">
+                <b>
+                    {{ genre?.name }}
+                </b>
+            </button>
+        </div>
     </div>
     
-    <div class="btns-div">
-        <button class="dds__btn btn_genres dds__text-white" *ngFor="let genre of genres" (click)="getMoviesByGenre(genre?.id)">
-            <b>
-                {{ genre?.name }}
-            </b>
-        </button>
-    </div>
-</div>
-
-<div *ngIf="listMovies.length != 0">
-    <swiper
-        #swiperRef
-        [slidesPerView]="6"
-        [spaceBetween]="30"
-        [centeredSlides]="true"
-        [scrollbar]="{
-        hide: true
-        }"
-        class="mySwiper"
-    >
-        <ng-template *ngFor="let movie of listMovies" swiperSlide>
-            <div class="img">
-                <div class="title-movie">
-                    
-                    <div class="swiper_texts">
-                        <img [src]="returnSrc(movie.poster_path)" alt="">
-                    </div>
+    <div *ngIf="listMovies.length != 0" class="center black" >
+        
+        <b>
+            <span [innerHtml]="genrerNameChoose" class="title1-genre"></span>
+        </b>
+        
+        <swiper
+            #swiperRef
+            [loop]="true"
+            [slidesPerView]="6"
+            [spaceBetween]="30"
+            [centeredSlides]="true"
+            [pagination]="{ clickable: true }"
+            class="mySwiper"
+        >
+            <ng-template *ngFor="let movie of listMovies" swiperSlide>
+                <div>    
+                    <img [src]="returnSrc(movie?.poster_path)" class="img-movie" alt="">
                 </div>
-            </div>
-        </ng-template>
-    </swiper>
+            </ng-template>
+        </swiper>
+    
+    </div>
 
 </div>
+
