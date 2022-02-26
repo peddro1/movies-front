@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { GenresComponent } from 'src/app/shared/genres/genres.component';
 import { SearchBarComponent } from 'src/app/shared/search-bar/search-bar.component';
 import { PopularMoviesComponent } from 'src/app/shared/popular-movies/popular-movies.component';
+import { ReleaseMoviesComponent } from 'src/app/shared/release-movies/release-movies.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { PopularMoviesComponent } from 'src/app/shared/popular-movies/popular-mo
     HomeComponent, 
     GenresComponent, 
     SearchBarComponent,
-    PopularMoviesComponent
+    PopularMoviesComponent,
+    ReleaseMoviesComponent
   ],
   imports: [
     CommonModule,

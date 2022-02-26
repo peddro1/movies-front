@@ -47,4 +47,8 @@ export class MovieService {
     return this.http.get<any>(this.apiMovie + '/movie/popular' + this.apiKey + '&language=pt-BR');
   }
 
+  findReleaseMovies(){
+    return this.http.get<any>(this.apiMovie + '/movie/now_playing' + this.apiKey + '&language=pt-BR')
+  }
+
 }
