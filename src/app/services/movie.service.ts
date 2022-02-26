@@ -32,7 +32,11 @@ export class MovieService {
   }
 
   findListGenres(){
-    return this.http.get<any>(this.apiMovie + "/genre/movie/list" + this.apiKey);
+    return this.http.get<any>(this.apiMovie + "/genre/movie/list" + this.apiKey + '&language=pt-BR');
+  }
+
+  findListMoviesByGenre(idGenre: number){
+    return this.http.get<any>(this.apiMovie + '/discover/movie' + this.apiKey + "&with_genres=" + idGenre + "&sort_by=vote_average.desc&vote_count.gte=10&language=pt-BR")
   }
 
 }

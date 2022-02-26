@@ -7,6 +7,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
+import { SwiperModule } from "swiper/angular";
+
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { MatSliderModule } from '@angular/material/slider';
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatSliderModule
+    MatSliderModule,
+    SwiperModule
   ],
   providers: [],
   bootstrap: [AppComponent]

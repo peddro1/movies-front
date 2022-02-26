@@ -15,6 +15,10 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import("./public/login/login.module").then(m =>m.LoginModule)
+  },
+  {
+    path: 'home',
+    loadChildren: () => import("./private/home/home.module").then(m => m.HomeModule)
   }
 ];
 
