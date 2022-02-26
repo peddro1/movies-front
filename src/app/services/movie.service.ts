@@ -39,4 +39,7 @@ export class MovieService {
     return this.http.get<any>(this.apiMovie + '/discover/movie' + this.apiKey + "&with_genres=" + idGenre + "&sort_by=vote_average.desc&vote_count.gte=10&language=pt-BR")
   }
 
+  findMoviesByName(name: String){
+    return this.http.get<any>(this.apiMovie + '/search/movie' + this.apiKey + '&query=' + name + '&language=pt-BR');
+  }
 }

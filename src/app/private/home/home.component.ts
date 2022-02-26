@@ -17,7 +17,7 @@ SwiperCore.use([Autoplay, Pagination, Navigation]);
 export class HomeComponent implements OnInit {
   @ViewChild("swiperRef", { static: false }) sliderRef?: SwiperComponent;
 
-  idMovies = [540734, 550, 603, 475557, 634649, 646385, 414906, 496243];
+  idMovies = [540734, 550, 446159 , 603, 475557, 634649, 646385, 414906, 496243];
 
   movies: Array<MovieFromApi> = [];
 
