@@ -24,7 +24,7 @@
     class="mySwiper"
   >
   <ng-template *ngFor="let movie of movies" swiperSlide>
-    <div class="img"  [style.background-image]="returnSrc(movie?.backdrop_path)">
+    <div class="img"  [style.background-image]="returnSrc(movie?.backdrop_path)"  (click)="gotoDetails(movie?.id)">
 
       <div class="title-movie">
         <div class="swiper_texts">

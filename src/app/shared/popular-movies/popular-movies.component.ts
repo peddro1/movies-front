@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { MovieFromApi } from 'src/app/models/MovieFromApi.model';
 import { MovieService } from 'src/app/services/movie.service';
 import SwiperCore, { Pagination, Navigation, Autoplay } from "swiper";
@@ -17,11 +18,12 @@ export class PopularMoviesComponent implements OnInit {
 
   public moviesPopular: Array<MovieFromApi> = [];
 
-  constructor(private movieService: MovieService) { }
+  constructor(private movieService: MovieService,
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
     this.movieService.findMoviesPopular().subscribe(movies =>{
-      console.log(movies)
       this.moviesPopular = movies.results
     })
   }
@@ -33,4 +35,7 @@ export class PopularMoviesComponent implements OnInit {
     return
   }
 
+  gotoDetails(id: number | undefined){
+    this.router.navigate(["/details/", id]);
+  }
 }

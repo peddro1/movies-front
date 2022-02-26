@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { Genre } from 'src/app/models/Genre.model';
 import { MovieFromApi } from 'src/app/models/MovieFromApi.model';
 import { MovieService } from 'src/app/services/movie.service';
@@ -23,7 +24,8 @@ export class GenresComponent implements OnInit {
   public genrerNameChoose: String | undefined;
 
   constructor(
-    private movieService: MovieService
+    private movieService: MovieService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -46,4 +48,7 @@ export class GenresComponent implements OnInit {
     return
   }
 
+  gotoDetails(id: number | undefined){
+    this.router.navigate(["/details/", id]);
+  }
 }

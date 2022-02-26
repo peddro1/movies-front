@@ -4,6 +4,7 @@ import { SwiperComponent } from "swiper/angular";
 import SwiperCore, { Pagination, Navigation, Autoplay } from "swiper";
 import { MovieService } from 'src/app/services/movie.service';
 import { MovieFromApi } from 'src/app/models/MovieFromApi.model';
+import { Router } from '@angular/router';
 
 // install Swiper modules
 SwiperCore.use([Autoplay, Pagination, Navigation]);
@@ -21,7 +22,9 @@ export class HomeComponent implements OnInit {
 
   movies: Array<MovieFromApi> = [];
 
-  constructor(private movieService: MovieService  ) {
+  constructor(private movieService: MovieService, 
+    private router: Router
+    ) {
   }
 
   ngOnInit(): void {
@@ -40,6 +43,10 @@ export class HomeComponent implements OnInit {
       return 'url(https://image.tmdb.org/t/p/original/' + backdrop_path + ')';
     } 
     return
+  }
+
+  gotoDetails(id: number | undefined){
+    this.router.navigate(["/details/", id]);
   }
 
 }

@@ -28,7 +28,7 @@
             class="mySwiper"
         >
             <ng-template *ngFor="let movie of listMovies" swiperSlide>
-                <div>    
+                <div (click)="gotoDetails(movie?.id)">    
                     <img [src]="returnSrc(movie?.poster_path)" class="img-movie" alt="">
                 </div>
             </ng-template>

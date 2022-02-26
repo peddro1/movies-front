@@ -1,0 +1,18 @@
+
+<div class="poster-div">
+    <div class="center">
+        <img [src]="returnSrc(movie?.poster_path)" alt="" class="img-movie">
+    </div>
+</div>
+
+<div class="black">
+    <div class="texts-div">
+        <h1 class="dds__text-white"> {{movie?.title}}</h1>
+        <h3 class="dds__text-white"> {{ movie?.genre?.name }} - {{ movie?.release_date }}</h3>
+        <img [src]="returnSrcBackDrop(movie?.backdrop_path)" alt="" class="backdrop">
+
+        <h3 class="dds__text-white">Descrição</h3>
+        <p class="dds__text-white">{{movie?.overview}}</p>
+    </div>
+    
+</div>

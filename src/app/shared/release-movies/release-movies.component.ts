@@ -3,6 +3,7 @@ import { MovieFromApi } from 'src/app/models/MovieFromApi.model';
 import { MovieService } from 'src/app/services/movie.service';
 import { SwiperComponent } from 'swiper/angular';
 import SwiperCore, { Pagination, Navigation, Autoplay } from "swiper";
+import { Router } from '@angular/router';
 
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 
@@ -20,7 +21,8 @@ export class ReleaseMoviesComponent implements OnInit {
   public listMovies: Array<MovieFromApi> = [];
 
   constructor(
-    private movieService: MovieService
+    private movieService: MovieService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -36,4 +38,7 @@ export class ReleaseMoviesComponent implements OnInit {
     return
   }
 
+  gotoDetails(id: number | undefined){
+    this.router.navigate(["/details/", id]);
+  }
 }

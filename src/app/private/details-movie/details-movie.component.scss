@@ -1,0 +1,36 @@
+.poster-div{
+    width: 30vw;
+    height: 100vh;
+    position: fixed;
+    background-image:  linear-gradient( rgb(51, 51, 51), black);
+    display: flex;
+    align-items: center;
+}
+
+.center{
+    width: 100%;
+    text-align: center;
+}
+
+.img-movie{
+    border-radius: 10px;
+}
+
+
+.black{
+    width: 70vw;
+    
+    float: right;
+    background-color: black;
+}
+
+.texts-div{
+    max-width: 800px;
+    padding: 100px;
+}
+
+.backdrop{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 700px;
+}

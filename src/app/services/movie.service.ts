@@ -21,14 +21,15 @@ export class MovieService {
     return this.http.get<MovieFromApi>(this.apiMovie + '/movie/' + id + this.apiKey + '&language=pt-BR');
   }
 
-  private findVideosInfoFromMovie(id: number){
-    return this.http.get<ResponseGeneral>(this.apiMovie + '/movie/' + id + "/videos" + this.apiKey);
+  findVideosInfoFromMovie(id: number){
+    return this.http.get<ResponseGeneral>(this.apiMovie + '/movie/' + id + '/videos' + this.apiKey);
   }
 
-  returnLinkVideo(id: number){
+  returnLinkVideo(id: number): String{
     this.findVideosInfoFromMovie(id).subscribe(videoInfo => {
-      return 'https://www.youtube.com/watch?v=' + videoInfo?.results[0]?.key
+      return 'https://www.youtube.com/embed/' + videoInfo?.results[0]?.key
     });
+    return ''
   }
 
   findListGenres(){
