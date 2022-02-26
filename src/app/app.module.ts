@@ -9,7 +9,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { SwiperModule } from "swiper/angular";
 
-
 @NgModule({
   declarations: [
     AppComponent

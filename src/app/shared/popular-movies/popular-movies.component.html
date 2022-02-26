@@ -1,0 +1,22 @@
+
+<div *ngIf="moviesPopular.length != 0" class="center black" >
+
+    <h1 class="title1-genre"> Mais populares</h1>
+        
+    <swiper
+        #swiperRef
+        [loop]="true"
+        [slidesPerView]="6"
+        [spaceBetween]="30"
+        [centeredSlides]="true"
+        [pagination]="{ clickable: true }"
+        class="mySwiper"
+    >
+        <ng-template *ngFor="let movie of moviesPopular" swiperSlide>
+            <div>    
+                <img [src]="returnSrc(movie?.poster_path)" class="img-movie" alt="">
+            </div>
+        </ng-template>
+    </swiper>
+
+</div>

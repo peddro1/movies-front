@@ -7,10 +7,16 @@ import { SwiperModule } from "swiper/angular";
 import { FormsModule } from '@angular/forms';
 import { GenresComponent } from 'src/app/shared/genres/genres.component';
 import { SearchBarComponent } from 'src/app/shared/search-bar/search-bar.component';
+import { PopularMoviesComponent } from 'src/app/shared/popular-movies/popular-movies.component';
 
 
 @NgModule({
-  declarations: [HomeComponent, GenresComponent, SearchBarComponent],
+  declarations: [
+    HomeComponent, 
+    GenresComponent, 
+    SearchBarComponent,
+    PopularMoviesComponent
+  ],
   imports: [
     CommonModule,
     HomeRoutingModule,

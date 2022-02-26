@@ -42,4 +42,9 @@ export class MovieService {
   findMoviesByName(name: String){
     return this.http.get<any>(this.apiMovie + '/search/movie' + this.apiKey + '&query=' + name + '&language=pt-BR');
   }
+
+  findMoviesPopular(){
+    return this.http.get<any>(this.apiMovie + '/movie/popular' + this.apiKey + '&language=pt-BR');
+  }
+
 }
