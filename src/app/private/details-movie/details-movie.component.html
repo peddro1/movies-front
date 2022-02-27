@@ -13,6 +13,22 @@
 
         <h3 class="dds__text-white">Descrição</h3>
         <p class="dds__text-white">{{movie?.overview}}</p>
+
+
+        <h1 class="dds__text-white">
+            Comentários
+        </h1>
+        <div *ngFor="let evaluation of evaluations">
+            <p class="dds__text-white"> {{evaluation?.comment}}</p>
+        </div>
+
+        <h1 class="dds__text-white">Avalie esse título</h1>
+
+        <input class="dds__p-2 input-comment" type="text"  placeholder="" [(ngModel)]="comment" >
+
+        <div  class="center">
+            <b> <button (click)="submitEvaluation()" class="dds__btn" > Enviar</button></b>
+        </div>
+        
     </div>
-    
 </div>
