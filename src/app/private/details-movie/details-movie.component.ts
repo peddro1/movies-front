@@ -40,12 +40,11 @@ export class DetailsMovieComponent implements OnInit {
       movie.genre = movie.genres?  movie.genres[0]: undefined 
       this.movie = movie;
     })
-    var foundMovie: Movie
+    //var foundMovie: Movie
     this.serviceDB.findMovieByIdApi(id).subscribe(mov =>{
       this.foundMovie = mov[0]
       this.serviceDB.findEvaluations(mov[0].id).subscribe(evaluations =>{
         this.evaluations = evaluations
-        console.log(this.evaluations)
       })
     });
     
@@ -80,8 +79,8 @@ export class DetailsMovieComponent implements OnInit {
       movie: resp
     }
     this.serviceDB.saveEvaluation(eva).subscribe(eva => {
-      console.log(eva)
+      this.ngOnInit();
     });
-    this.ngOnInit();
+    
   }
 }
